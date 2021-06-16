@@ -58,7 +58,7 @@ module.exports = function() {
             let codeText = `${langObj.code}`
             let lineComma = (index !== maxIndex) ? ',' : ''
 
-            if (codeText.includes('-')) {
+            if (codeText.includes('-') || codeText.includes('_')) {
               codeText = `'${codeText}'`
             }
 
