@@ -171,7 +171,13 @@ module.exports = function() {
                     // or just add the phrase key pair
                     else {
                       languageIndexFile += `  `
-                      let phraseKeyPair = `${result.Key}: '${result[langObj.langAndCode]}'`
+
+                      let key = result.Key
+                      if (key.includes('-') || key.includes('_')) {
+                        key = `'${key}'`
+                      }
+          
+                      let phraseKeyPair = `${key}: '${result[langObj.langAndCode]}'`
                       if (index !== maxIndex) {
                         phraseKeyPair = `${phraseKeyPair},`
                       }
