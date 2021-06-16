@@ -177,7 +177,14 @@ module.exports = function() {
                         key = `'${key}'`
                       }
           
-                      let phraseKeyPair = `${key}: '${result[langObj.langAndCode]}'`
+                      let value = result[langObj.langAndCode]
+                      if (value.includes('\n') || value.includes('\r')) {
+                        value = `\`${value}\``
+                      } else {
+                        value = `'${value}'`
+                      }
+
+                      let phraseKeyPair = `${key}: ${value}`
                       if (index !== maxIndex) {
                         phraseKeyPair = `${phraseKeyPair},`
                       }
