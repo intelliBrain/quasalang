@@ -650,8 +650,11 @@ Options:
 ```bash
 open npmjs.org in a browser and log in (=> 1password / authenticator)
 
-open a command prompt, then
+open a command prompt
+
+cd <project dir>
 
 npm login
 
+npm publish
 ```
